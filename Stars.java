@@ -15,10 +15,11 @@ public class Stars {
 
         //sets up several polygons, which create stars
         Random ran = new Random();
-        x = ran.nextInt(500);
+        x = ran.nextInt(500); //These lines can probably be removed.
         y = ran.nextInt(500);
 
-        //must be multiples of 3, as 3 polygons make a triangle!!!
+        //must be multiples of 3, as 3 X/Y Coords are required to make a triangle
+        //We should make a polycount var to create the list., and multiply that by 3. This can then be used below.
         this.stararr = new Polygon[5*3];
 
         //generates a random number, and then subtracts it from the X and Y of the triangle. this creates random triangles on X and Y coords!
@@ -26,7 +27,7 @@ public class Stars {
         for(int i=0; i<stararr.length;i++){
             x = ran.nextInt(500);
             y = ran.nextInt(500);
-            stararr[i] = new Polygon(11+x,55+x, 21+x,52+y, 20+y, 20+y);i++;
+            stararr[i] = new Polygon(11+x,55+x, 21+x,52+y, 20+y, 20+y);i++; //Probably safer to append rather than use i. Loop using aforementioned polycount var.
             stararr[i] = new Polygon(27+x,0+x, 55+x,40+y, 20+y, 20+y);i++;
             stararr[i] = new Polygon(17+x, 27+x, 45+x,32+y, 0+y, 52+y);
         }
